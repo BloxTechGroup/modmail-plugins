@@ -16,9 +16,9 @@ class Test(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
     async def tester(self, ctx: commands.Context, amount: int):
-        """Delete multiple messages at once."""
+        """This is just my test command... Freel free to ignore :wink:"""
         
-        message = f"{len(deleted)} messages have been deleted!"
+        message ="Hello, world!"
         to_delete = await ctx.send(message)
 
         await to_delete.delete(delay=3)
