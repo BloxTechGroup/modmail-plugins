@@ -19,9 +19,7 @@ class Test(commands.Cog):
         """This is just my test command... Freel free to ignore :wink:"""
         
         message ="Hello, world!"
-        to_delete = await ctx.send(message)
-
-        await to_delete.delete(delay=3)
+        await ctx.send(message)
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
