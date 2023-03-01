@@ -12,6 +12,19 @@ class Test(commands.Cog):
 
     def __init__(self, bot: commands.Bot):
         self.bot = bot
+        
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    async def myTestCommand(self, ctx: commands.Context, message: string):
+        """This is just a test command, please ignore"""
+        if(message == "bad"):
+            raise commands.BadArgument(f"Sorry! `{message}` is not a valid argument")
+        
+        message = "Okay, it worked... I think..."
+        to_delete = await ctx.send(message)
+
+        await to_delete.delete(delay=3)
+        
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
