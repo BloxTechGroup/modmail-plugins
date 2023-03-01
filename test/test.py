@@ -11,7 +11,17 @@ class Test(commands.Cog):
     """Plugin to delete multiple messages at once."""
 
     def __init__(self, bot: commands.Bot):
-        self.bot = bot        
+        self.bot = bot  
+    
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.MODERATOR)
+    async def myCommand(self, ctx: commands.Context, amount: int):
+        """Delete multiple messages at once."""
+        
+        message = f"{len(deleted)} messages have been deleted!"
+        to_delete = await ctx.send(message)
+
+        await to_delete.delete(delay=3)
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
