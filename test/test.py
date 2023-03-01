@@ -20,6 +20,14 @@ class Test(commands.Cog):
         
         message ="Hello, world!"
         await ctx.send(message)
+        
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.MODERATOR)
+    async def tester2(self, ctx: commands.Context, amount: int):
+        """This is just my test command... Freel free to ignore :wink:"""
+        
+        message ="Hello, world!"
+        await ctx.send(message)
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
