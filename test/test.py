@@ -20,6 +20,12 @@ class Test(commands.Cog):
         
         message ="Hello, world!"
         await ctx.send(message)
+    
+    @checks.has_permissions(PermissionLevel.SUPPORTER)
+    @checks.thread_only()
+    @commands.command()
+    async def claim(self, ctx):
+        await ctx.send('Thread is already claimed')
         
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
