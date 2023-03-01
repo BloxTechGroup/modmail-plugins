@@ -20,6 +20,21 @@ class Test(commands.Cog):
         
         message ="Hello, world!"
         await ctx.send(message)
+     
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.MODERATOR)
+    async def tester2(self, ctx: commands.Context):
+        """This is just my test command... Freel free to ignore :wink:"""
+        
+        message ="Hello, world!"
+        await ctx.send(message)
+    
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.MODERATOR)
+    async def tester3(self, ctx: commands.Context, message: text):
+        """This is just my test command... Freel free to ignore :wink:"""
+        
+        await ctx.send(message)
     
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @checks.thread_only()
@@ -28,13 +43,7 @@ class Test(commands.Cog):
         """Hello there!"""
         await ctx.send('Thread is already claimed. Or is it?')
         
-    @commands.command()
-    @checks.has_permissions(PermissionLevel.MODERATOR)
-    async def tester2(self, ctx: commands.Context):
-        """This is just my test command... Freel free to ignore :wink:"""
-        
-        message ="Hello, world!"
-        await ctx.send(message)
+  
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
