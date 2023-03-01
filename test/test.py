@@ -31,7 +31,7 @@ class Test(commands.Cog):
     
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
-    async def tester3(self, ctx: commands.Context, message: text):
+    async def tester3(self, ctx: commands.Context, message: string):
         """This is just my test command... Freel free to ignore :wink:"""
         
         await ctx.send(message)
