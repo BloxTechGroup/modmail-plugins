@@ -25,7 +25,7 @@ class Test(commands.Cog):
     @checks.thread_only()
     @commands.command()
     async def claim(self, ctx):
-        await ctx.send('Thread is already claimed')
+        await ctx.send('Thread is already claimed. Or is it?')
         
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
